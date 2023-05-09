@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
   
   socket.on("mensaje", (data) => {
     socket.broadcast.emit('mensaje', data);
-    info.mensaje = JSON.parse(data);
+    socket.emit('mensaje', data);
   });
 
   socket.on("ledState", (data) => {
