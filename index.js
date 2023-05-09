@@ -9,7 +9,10 @@ import { PORT } from "./config.js";
 import cors from "cors";
 
 var info = {
-  "mensaje": {},
+  "mensaje": {
+    "username": "temporal",
+    "message": "Bienvenido" 
+  },
   "contador": 0,
   "ledState": false,
   "potVal": 0
