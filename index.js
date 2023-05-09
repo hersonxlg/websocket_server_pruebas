@@ -52,9 +52,9 @@ io.on("connection", (socket) => {
     socket.broadcast.emit('mensaje', data);
   });
 
-  socket.on("ledStatus", (data) => {
+  socket.on("ledState", (data) => {
     info.ledState = Boolean(data);
-    socket.broadcast.emit('ledStatus', data);
+    socket.broadcast.emit('ledState', data);
   });
 
   socket.on("potVal", (data) => {
