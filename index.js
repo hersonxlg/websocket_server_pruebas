@@ -59,6 +59,7 @@ io.on("connection", (socket) => {
 
   socket.on("potVal", (data) => {
     info.potVal = Number(data);
+    socket.emit('getAll', info);
     socket.broadcast.emit('potVal', data);
   });
 
