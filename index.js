@@ -48,8 +48,8 @@ io.on("connection", (socket) => {
   });
   
   socket.on("mensaje", (data) => {
-    info.mensaje = JSON.parse(data);
     socket.broadcast.emit('mensaje', data);
+    info.mensaje = JSON.parse(data);
   });
 
   socket.on("ledState", (data) => {
