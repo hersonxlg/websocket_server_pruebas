@@ -35,6 +35,14 @@ app.use(express.static(join(__dirname, "../client/build")));
 
 io.on("connection", (socket) => {
 
+  socket.on("getAll", (data) => {
+    socket.emit('getAll', info);
+  });
+
+  socket.on("echo", (data) => {
+    socket.emit('getAll', data);
+  });
+
   socket.on("init", (data) => {
     socket.broadcast.emit('init', info);
   });
