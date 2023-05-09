@@ -8,6 +8,9 @@ import { fileURLToPath } from "url";
 import { PORT } from "./config.js";
 import cors from "cors";
 
+
+var contador = 0;
+
 // Initializations
 const app = express();
 const server = http.createServer(app);
@@ -28,7 +31,8 @@ app.use(express.static(join(__dirname, "../client/build")));
 io.on("connection", (socket) => {
   console.log("un usuario conectado.");
   socket.on("message", (data) => {
-    socket.emit('respuesta', data);
+    socket.emit('respuesta', `${contador} : ${data}`);
+    contador++;
   });
 });
 
